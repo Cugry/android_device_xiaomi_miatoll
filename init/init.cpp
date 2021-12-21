@@ -68,12 +68,7 @@ void load_device_properties() {
     std::string region = GetProperty("ro.boot.hwc", "");
 
     if (hwname == "curtana") {
-        if (region == "Global_TWO") {
-            set_device_props(
-                    "Redmi/curtana_global/curtana:10/QKQ1.191215.002/V12.0.1.0.QJWMIXM:user/release-keys",
-                    "curtana_global-user 10 QKQ1.191215.002 V12.0.1.0.QJWMIXM release-keys",
-                    "Redmi", "curtana", "Redmi Note 9S");
-        } else if (region == "Global_PA") {
+        if (region == "Global_TWO" || region == "Global_PA" || region == "Japan") {
             set_device_props(
                     "Redmi/curtana_global/curtana:10/QKQ1.191215.002/V12.0.1.0.QJWMIXM:user/release-keys",
                     "curtana_global-user 10 QKQ1.191215.002 V12.0.1.0.QJWMIXM release-keys",
@@ -83,12 +78,8 @@ void load_device_properties() {
                     "Redmi/curtana/curtana:10/QKQ1.191215.002/V12.0.1.0.QJWINXM:user/release-keys",
                     "curtana_in-user 10 QKQ1.191215.002 V12.0.1.0.QJWINXM release-keys",
                     "Redmi", "curtana", "Redmi Note 9 Pro");
-        } else if (region == "Japan") {
-            set_device_props(
-                    "Redmi/curtana_global/curtana:10/QKQ1.191215.002/V12.0.1.0.QJWMIXM:user/release-keys",
-                    "curtana_global-user 10 QKQ1.191215.002 V12.0.1.0.QJWMIXM release-keys",
-                    "Redmi", "curtana", "Redmi Note 9S");
         }
+
     } else if (hwname == "excalibur") {
         set_device_props(
                 "Redmi/excalibur_in/excalibur:10/QKQ1.191215.002/V12.0.1.0.QJXINXM:user/release-keys",
